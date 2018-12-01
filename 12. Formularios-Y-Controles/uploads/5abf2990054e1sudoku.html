@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <title>Sudoku</title>
+
+    <style>
+        td{
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        table{
+            width:  100px;
+            height: 100px;
+           border-collapse: collapse;
+        }
+
+        body {
+            margin: 0 auto;
+            width: 310px;
+            margin-top: 80px;
+        }
+
+
+    </style>
+
+    <script>
+        $( document ).ready(function() {
+
+            var coloractual;
+            var content;
+
+            $(".tdinterior").hover(
+                function(){
+                    coloractual = $(this).css("background-color");
+                    $(this).css("background-color", "grey");
+                },
+                function(){
+
+                    $(this).css("background-color", coloractual);
+                }
+            );
+
+            $(".tdinterior").click(function(){
+
+
+
+                if (coloractual == "rgb(0, 0, 255)"){
+                    $(this).css("background-color", "white");
+                    coloractual = $(this).css("background-color");
+                } else {
+                    $(this).css("background-color", "blue");
+                    coloractual = $(this).css("background-color");
+                }
+
+            });
+
+            $(".tdinterior").dblclick(function(){
+
+                content = $(this).text();
+                $(this).parents().eq(2).hide();
+                $(this).parents().eq(3).append("<table><tr><td class='tdseleccionado'>"+ content +"</td></tr></table>");
+
+                $(".tdseleccionado").dblclick(function(){
+                    $(this).parents().eq(2).siblings().show();
+                   $(this).parents().eq(2).remove();
+
+                });
+
+            });
+
+        });
+
+
+    </script>
+
+</head>
+
+
+<body>
+
+<table>
+    <tr>
+        <td class="tdexterior">
+            <table>
+                <tr>
+                    <td class="tdinterior">1</td>
+                    <td class="tdinterior">2</td>
+                    <td class="tdinterior">3</td>
+                </tr>
+                <tr>
+                    <td class="tdinterior">4</td>
+                    <td class="tdinterior">5</td>
+                    <td class="tdinterior">6</td>
+                </tr>
+                <tr>
+                    <td class="tdinterior">7</td>
+                    <td class="tdinterior">8</td>
+                    <td class="tdinterior">9</td>
+                </tr>
+            </table>
+        </td>
+        <td class="tdexterior">
+            <table>
+                <tr>
+                    <td class="tdinterior">1</td>
+                    <td class="tdinterior">2</td>
+                    <td class="tdinterior">3</td>
+                </tr>
+                <tr>
+                    <td class="tdinterior">4</td>
+                    <td class="tdinterior">5</td>
+                    <td class="tdinterior">6</td>
+                </tr>
+                <tr>
+                    <td class="tdinterior">7</td>
+                    <td class="tdinterior">8</td>
+                    <td class="tdinterior">9</td>
+                </tr>
+            </table>
+        </td>
+        <td class="tdexterior">
+            <table>
+                <tr>
+                    <td class="tdinterior">1</td>
+                    <td class="tdinterior">2</td>
+                    <td class="tdinterior">3</td>
+                </tr>
+                <tr>
+                    <td class="tdinterior">4</td>
+                    <td class="tdinterior">5</td>
+                    <td class="tdinterior">6</td>
+                </tr>
+                <tr>
+                    <td class="tdinterior">7</td>
+                    <td class="tdinterior">8</td>
+                    <td class="tdinterior">9</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdexterior">
+            <table>
+                <tr>
+                    <td class="tdinterior">1</td>
+                    <td class="tdinterior">2</td>
+                    <td class="tdinterior">3</td>
+                </tr>
+                <tr>
+                    <td class="tdinterior">4</td>
+                    <td class="tdinterior">5</td>
+                    <td class="tdinterior">6</td>
+                </tr>
+                <tr>
+                    <td class="tdinterior">7</td>
+                    <td class="tdinterior">8</td>
+                    <td class="tdinterior">9</td>
+                </tr>
+            </table>
+        </td>
+        <td class="tdexterior">
+            <table>
+                <tr>
+                    <td class="tdinterior">1</td>
+                    <td class="tdinterior">2</td>
+                    <td class="tdinterior">3</td>
+                </tr>
+                <tr>
+                    <td class="tdinterior">4</td>
+                    <td class="tdinterior">5</td>
+                    <td class="tdinterior">6</td>
+                </tr>
+                <tr>
+                    <td class="tdinterior">7</td>
+                    <td class="tdinterior">8</td>
+                    <td class="tdinterior">9</td>
+                </tr>
+            </table>
+        </td>
+        <td class="tdexterior">
+            <table>
+                <tr>
+                    <td class="tdinterior">1</td>
+                    <td class="tdinterior">2</td>
+                    <td class="tdinterior">3</td>
+                </tr>
+                <tr>
+                    <td class="tdinterior">4</td>
+                    <td class="tdinterior">5</td>
+                    <td class="tdinterior">6</td>
+                </tr>
+                <tr>
+                    <td class="tdinterior">7</td>
+                    <td class="tdinterior">8</td>
+                    <td class="tdinterior">9</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdexterior">
+            <table>
+                <tr>
+                    <td class="tdinterior">1</td>
+                    <td class="tdinterior">2</td>
+                    <td class="tdinterior">3</td>
+                </tr>
+                <tr>
+                    <td class="tdinterior">4</td>
+                    <td class="tdinterior">5</td>
+                    <td class="tdinterior">6</td>
+                </tr>
+                <tr>
+                    <td class="tdinterior">7</td>
+                    <td class="tdinterior">8</td>
+                    <td class="tdinterior">9</td>
+                </tr>
+            </table>
+        </td>
+        <td class="tdexterior">
+            <table>
+                <tr>
+                    <td class="tdinterior">1</td>
+                    <td class="tdinterior">2</td>
+                    <td class="tdinterior">3</td>
+                </tr>
+                <tr>
+                    <td class="tdinterior">4</td>
+                    <td class="tdinterior">5</td>
+                    <td class="tdinterior">6</td>
+                </tr>
+                <tr>
+                    <td class="tdinterior">7</td>
+                    <td class="tdinterior">8</td>
+                    <td class="tdinterior">9</td>
+                </tr>
+            </table>
+        </td>
+        <td class="tdexterior">
+            <table>
+                <tr>
+                    <td class="tdinterior">1</td>
+                    <td class="tdinterior">2</td>
+                    <td class="tdinterior">3</td>
+                </tr>
+                <tr>
+                    <td class="tdinterior">4</td>
+                    <td class="tdinterior">5</td>
+                    <td class="tdinterior">6</td>
+                </tr>
+                <tr>
+                    <td class="tdinterior">7</td>
+                    <td class="tdinterior">8</td>
+                    <td class="tdinterior">9</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+</table>
+
+
+</body>
+</html>
+
